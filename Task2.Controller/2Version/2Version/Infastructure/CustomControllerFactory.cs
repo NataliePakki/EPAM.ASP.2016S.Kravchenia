@@ -14,7 +14,11 @@ namespace _2Version.Infastructure {
                     targetType = typeof(UserController);
                     break;
                 case "Admin":
-                    targetType = typeof (AdminController);
+                    if (requestContext.HttpContext.Request.IsLocal) {
+                        targetType = typeof (AdminController);
+                        break;
+                    } 
+                    targetType = typeof(HomeController);
                     break;
                 case "Home":
                     targetType = typeof (HomeController);

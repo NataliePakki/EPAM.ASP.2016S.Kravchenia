@@ -10,18 +10,18 @@ namespace _2Version.Controllers {
         public AdminController() {
             userRepository = UserRepository.Instance;
         }
-        [Local]
+
         [HttpGet]
         public ActionResult List() {
             return View(userRepository.GetAll());
         }
-        [Local]
+
         [HttpGet]
         [ActionName("Add")]
         public ActionResult Add() {
             return View();
         }
-        [Local]
+
         [HttpPost]
         [ActionName("Add")]
         public async Task<ActionResult> Add(User user) {
@@ -29,13 +29,12 @@ namespace _2Version.Controllers {
             return RedirectToAction("List");
         }
 
-        [Local]
         [HttpGet]
         [ActionName("Delete")]
         public ActionResult DeleteGet(int id) {
             return View(userRepository.Get(id));
         }
-        [Local]
+
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeletePost(int id) {
