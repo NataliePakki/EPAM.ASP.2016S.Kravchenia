@@ -42,5 +42,18 @@ namespace _2Version.Controllers {
             return RedirectToAction("List");
         }
 
+        [HttpGet]
+        [ActionName("Edit")]
+        public async Task<ActionResult> EditGet(int id) {
+            return View(await userRepository.Get(id));
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public async Task<ActionResult> EditPost(User user) {
+            await userRepository.Edit(user);
+            return RedirectToAction("List");
+        }
+
     }
 }

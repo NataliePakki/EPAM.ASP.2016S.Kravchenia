@@ -21,6 +21,11 @@ namespace _2Version.Infastructure {
             await Task.Run(() => Users.Add(user));
         }
 
+        public async Task Edit(User user) {
+            await Delete(user.Id);
+            await Add(user);
+        }
+
         public async Task Delete(int id) {
             await Task.Run(()=> Users.Remove(Users.Find(u => u.Id == id)));
         }
