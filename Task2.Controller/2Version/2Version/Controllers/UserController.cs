@@ -14,7 +14,7 @@ namespace _2Version.Controllers {
         [HttpPost]
         [ActionName("Add-User")]
         public async Task<ActionResult> Add(User user) {
-            await Task.Factory.StartNew((() => { userRepository.Add(user); }));
+            await userRepository.Add(user);
             return RedirectToAction("User-List");
         }
 
@@ -33,8 +33,6 @@ namespace _2Version.Controllers {
         public ActionResult ListGet() {
             return View(userRepository.GetAll());
         }
-
-
 
     }
 }

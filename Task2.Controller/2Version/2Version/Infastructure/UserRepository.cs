@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using _2Version.Models;
 
 namespace _2Version.Infastructure {
@@ -14,20 +15,20 @@ namespace _2Version.Infastructure {
         static UserRepository() {
             Instance = new UserRepository();
         }
-        public void Add(User user) {
+        public async Task Add(User user) {
             id++;
             user.Id = id;
-            Users.Add(user);
+            await Task.Run(() => Users.Add(user));
         }
 
-        public void Delete(int id) {
-            Users.Remove(Users.Find(u => u.Id == id));
+        public async Task Delete(int id) {
+            await Task.Run(()=> Users.Remove(Users.Find(u => u.Id == id)));
         }
         public List<User> GetAll() {
             return Users;
         }
-        public User Get(int id) {
-            return Users.Find(user => user.Id == id);
+        public async Task<User> Get(int id) {
+            return await Task.Run(() => Users.Find(user => user.Id == id));
         }
     }
 }

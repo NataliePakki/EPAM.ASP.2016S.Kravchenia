@@ -25,20 +25,20 @@ namespace _2Version.Controllers {
         [HttpPost]
         [ActionName("Add")]
         public async Task<ActionResult> Add(User user) {
-            await Task.Factory.StartNew((() => { userRepository.Add(user); }));
+            await userRepository.Add(user);
             return RedirectToAction("List");
         }
 
         [HttpGet]
         [ActionName("Delete")]
-        public ActionResult DeleteGet(int id) {
-            return View(userRepository.Get(id));
+        public async Task<ActionResult> DeleteGet(int id) {
+            return View(await userRepository.Get(id));
         }
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeletePost(int id) {
-            userRepository.Delete(id);
+        public async Task<ActionResult> DeletePost(int id) {
+            await userRepository.Delete(id);
             return RedirectToAction("List");
         }
 
