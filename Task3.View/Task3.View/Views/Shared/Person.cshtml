@@ -1,0 +1,7 @@
+﻿@model Task3.View.Models.Person
+@{
+    ViewBag.Title = "Person";
+}
+@Html.Partial("_Header", Model)
+<h1>@Model.Name</h1>
+@Html.Action("Footer", "Person")
