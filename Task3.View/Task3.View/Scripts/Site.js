@@ -1,7 +1,5 @@
 ﻿//  Join other side
 function joinOtherSide() {
-//    var userId = $("#Id").val();
-//    if ($("#IsBlocked").val() === "True") {
         $.ajax({
             type: "Post",
             url: "/Person/JoinOtherSide",
@@ -9,10 +7,8 @@ function joinOtherSide() {
             processData: false,
             contentType: false,
             success: function (result) {
-                if (result === "True") {
-                    $(".navbar").removeClass("true").addClass("false");
-                    $(".icon").removeClass("black").addClass("white");
-                    $(".name").text("White Side");
+                if (result === "False") {
+                    alert("I don't remember what to write this! c:");
                 } else {
                     $(".false").removeClass("false").addClass("true");
                     $(".icon").removeClass("white").addClass("black");
