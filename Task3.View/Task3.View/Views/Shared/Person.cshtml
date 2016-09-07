@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "Person";
 }
+@section Navbar{
+    @Html.Partial("_Navbar", Model.IsWhite)
+}
 @Html.Partial("_Header", Model)
 <h1>@Model.Name</h1>
 @Html.Action("Footer", "Person")

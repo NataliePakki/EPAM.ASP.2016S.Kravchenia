@@ -10,10 +10,13 @@ function joinOtherSide() {
             contentType: false,
             success: function (result) {
                 if (result === "True") {
+                    $(".navbar").removeClass("true").addClass("false");
                     $(".icon").removeClass("black").addClass("white");
                     $(".name").text("White Side");
                 } else {
-                    $(".icon").text("Black Side");
+                    $(".false").removeClass("false").addClass("true");
+                    $(".icon").removeClass("white").addClass("black");
+                    $(".name").text("Black Side");
                 }
             }
         });
