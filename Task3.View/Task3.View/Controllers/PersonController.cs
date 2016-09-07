@@ -5,7 +5,7 @@ using Task3.View.Models;
 
 namespace Task3.View.Controllers {
     public class PersonController : Controller {
-        private static Person person = new Person() {Id = 1, Name = "Jack", IsWhite = true};
+        private static Person person = new Person() {Id = 1, Name = "Melanie", IsWhite = true};
         public ActionResult Details() {
             return View("Person", person);
         }

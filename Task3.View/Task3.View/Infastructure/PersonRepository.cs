@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using Task3.View.Models;
 
 namespace Task3.View.Infastructure {

@@ -10,7 +10,7 @@ function joinOtherSide() {
                 if (result === "False") {
                     alert("I don't remember what to write this! c:");
                 } else {
-                    $(".false").removeClass("false").addClass("true");
+                    $(".navbar").removeClass("white").addClass("black");
                     $(".icon").removeClass("white").addClass("black");
                     $(".name").text("Black Side");
                 }

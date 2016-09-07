@@ -37,9 +37,9 @@ textarea {
 .name {
     display: inline-block;
 }
-.true.navbar {
-    background: black;
-}
-.false.navbar {
+.white.navbar {
     background: white;
+}
+.black.navbar {
+    background: black;
 }
